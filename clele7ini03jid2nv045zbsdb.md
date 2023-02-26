@@ -4,10 +4,6 @@ All good products will include an instruction manual to make it easier for users
 
 In this blog post, you can see how to use Dokka and KDoc to simplify your Android documentation and make it easier for other developers to work with your code. We will walk through the basics and show you how to use them to create well-organized and easy-to-use Android documentation.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677416047573/362f91a1-8160-41e4-9536-2b1921948aee.png)
-
-Workflow of dokka \[made with [canva](https://www.canva.com/)\]
-
 ### What is code documentation?
 
 Code documentation is the description that helps to understand what each code does in the application. For instance, it helps to give a clear overview of what each variable does, what a particular function is in the project, whether it has a parameter or any return type, and what its impact is in the code like details are being documented well.
@@ -32,13 +28,20 @@ Some documentation gives information more than what it needs resulting in unclea
 
 ### Good documentation characteristics
 
-*   Should be understandable
-*   It should be accurate and up to date
-*   Simple and concise
-*   Proper formatting
-*   The document should always hit the target
-*   Should properly describe each functionality
-*   It should properly document its parameters, links, receivers if any
+* Should be understandable
+    
+* It should be accurate and up to date
+    
+* Simple and concise
+    
+* Proper formatting
+    
+* The document should always hit the target
+    
+* Should properly describe each functionality
+    
+* It should properly document its parameters, links, receivers if any
+    
 
 ### What are KDoc and Dokka?
 
@@ -48,102 +51,114 @@ In Java, Javadoc is used to document java code. Before Dokka, there is no proper
 
 KDoc is the **language** used to document Kotlin code. To generate good documentation proper commenting is needed, to do this KDoc helps to commend using block tags and markdown. It is basically a plugin used in Android studio which helps to document. We can use KDoc by the following
 
-*   KDoc commenting started using / \*\* as the opening tag and ended using the \*/ closing tag
-*   KDoc supports block tags and inline and HTML markdown to provide additional information about the elements which is embedded using @ symbol
+* KDoc commenting started using / \*\* as the opening tag and ended using the \*/ closing tag
+    
+* KDoc supports block tags and inline and HTML markdown to provide additional information about the elements which is embedded using @ symbol
+    
 
 ***Block tags***
 
-*   @receiver: document receiver extension
-*   @param: documents properties of class or functions with name and description
-*   @see: documents link to a specified class or function
+* @receiver: document receiver extension
+    
+* @param: documents properties of class or functions with name and description
+    
+* @see: documents link to a specified class or function
+    
 
 ***Inline Markdown***
 
-*   \# h1, ## h2, \[\], > etc.. tags are supported
+* \# h1, ## h2, \[\], &gt; etc.. tags are supported
+    
 
 ***HTML tags***
 
-<i>, <img>, <html>, <head> etc.. tags can also be used
+*, , , etc.. tags can also be used*
 
-> Read more about [markdown guides](https://www.markdownguide.org/basic-syntax/) to get familiar
+> *Read more about* [*markdown guides*](https://www.markdownguide.org/basic-syntax/) *to get familiar*
 
-#### Dokka
+#### *Dokka*
 
-It is a tool used in to generate documentation. The generated documentation can be **viewed basically in formats that include HTML, markup, and standard Javadoc**. Dokka supports documentation of both java and Kotlin. It generates a Kotlin document if it is embedded using KDoc in the Kotlin file and generates Javadoc if commented using Javadoc comments.
+*It is a tool used in to generate documentation. The generated documentation can be* ***viewed basically in formats that include HTML, markup, and standard Javadoc****. Dokka supports documentation of both java and Kotlin. It generates a Kotlin document if it is embedded using KDoc in the Kotlin file and generates Javadoc if commented using Javadoc comments.*
 
-### How to implement
+### *How to implement*
 
-#### 1\. Implement dependencies in project-level build.gradle
+#### *1\. Implement dependencies in project-level build.gradle*
 
-plugins { id ‘org.jetbrains.dokka’ version ‘1.7.0’ apply false}
+*plugins { id ‘org.jetbrains.dokka’ version ‘1.7.0’ apply false}*
 
-#### 2\. Implement dependencies in module-level build.gradle
+#### *2\. Implement dependencies in module-level build.gradle*
 
-plugins { id 'org.jetbrains.dokka' }
+*plugins { id 'org.jetbrains.dokka' }*
 
-*   If you have multiple modules add in there too
-*   Sync project
+* *If you have multiple modules add in there too*
+    
+* *Sync project*
+    
 
-After a successful build do the following steps
+*After a successful build do the following steps*
 
-#### 3\. Document Generation
+#### *3\. Document Generation*
 
-Open the **terminal** option in Android Studio and type the following
+*Open the* ***terminal*** *option in Android Studio and type the following*
 
-*   To generate a document for the **module** type the script in terminal
+* *To generate a document for the* ***module*** *type the script in terminal*
+    
 
-./gradlew dokkaHtml
+*./gradlew dokkaHtml*
 
-*   To generate a document for **multi-module** type as follows
+* *To generate a document for* ***multi-module*** *type as follows*
+    
 
-./gradlew dokkaHtmlMultiModule
+*./gradlew dokkaHtmlMultiModule*
 
-Once it completes the process you can see the generated document in **build/dokka by changing the view type from Android to Project.** Here is a sample dokka build generated in open source project [**Sliderz**](https://github.com/kodeflap/Sliderz)**.**
+*Once it completes the process you can see the generated document in* ***build/dokka by changing the view type from Android to Project.*** *Here is a sample dokka build generated in open source project* [***Sliderz***](https://github.com/kodeflap/Sliderz)***.***
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677416049109/f453d823-7a10-4582-b822-bf98b49ff4ca.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677416049109/f453d823-7a10-4582-b822-bf98b49ff4ca.png align="left")
 
-Project view of [sliderz](https://github.com/kodeflap/Sliderz)
+*Project view of* [*sliderz*](https://github.com/kodeflap/Sliderz)
 
-And by clicking the index.html and opening the browser we can see the code documentation generate in **HTML** format which is the **default format.**
+*And by clicking the index.html and opening the browser we can see the code documentation generate in* ***HTML*** *format which is the* ***default format.***
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677416050224/09524739-608d-4dcf-9844-6fad86e99aed.png)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1677416050224/09524739-608d-4dcf-9844-6fad86e99aed.png align="left")
 
-Code documentatio[n of sl](https://github.com/kodeflap/Sliderz)iderz
+*Code documentatio*[*n of sl*](https://github.com/kodeflap/Sliderz)*iderz*
 
-> The Dokka also supports other formats including Javadoc, gfm, and Jekyll.
+> *The Dokka also supports other formats including Javadoc, gfm, and Jekyll.*
 
-But if we have not included any Kdoc commenting then it will give a blank HTML document. To do so we have to include KDoc comment. The normal commenting using // comment, /\* comment\*/, <!-comment → are not regarded as Kdoc comments. We can do Kdoc commenting using the below symbol.
+*But if we have not included any Kdoc commenting then it will give a blank HTML document. To do so we have to include KDoc comment. The normal commenting using // comment, /\* comment\*/, &lt;!-comment → are not regarded as Kdoc comments. We can do Kdoc commenting using the below symbol.*
 
-#### Kdoc Commenting
+#### *Kdoc Commenting*
 
-/\*\* and press enter  
+*/\*\* and press enter  
 \*\*/  
-fun foo(parameter){ }
+fun foo(parameter){ }*
 
-#### Remainder
+#### *Remainder*
 
-*   More explanatory code documentation only happens by choosing suitable naming conventional and clearly defined variable names.
-*   You can provide additional details to be displayed in the documentation
+* *More explanatory code documentation only happens by choosing suitable naming conventional and clearly defined variable names.*
+    
+* *You can provide additional details to be displayed in the documentation*
+    
 
-### Sample Kdoc commenting example
+### *Sample Kdoc commenting example*
 
-> /\*\*  
+> */\*\*  
 >  \* Performs a complicated operation.  
 >  \*  
->  \* [@param](http://twitter.com/param "Twitter profile for @param") remote If true, executes operation remotely   
->  \* [@return](http://twitter.com/return "Twitter profile for @return") The result of executing the operation   
+>  \** [*@param*](http://twitter.com/param) *remote If true, executes operation remotely   
+>  \** [*@return*](http://twitter.com/return) *The result of executing the operation   
 >  \*  
 >  \*/  
-> fun foo(remote: Boolean): Result { … }
+> fun foo(remote: Boolean): Result { … }*
 
-It can be further expanded if it has a constructor, exception throwing, etc.. are implemented in code.
+*It can be further expanded if it has a constructor, exception throwing, etc.. are implemented in code.*
 
-You can look at the further Block Tags used in the official KDoc documentation.
+*You can look at the further Block Tags used in the official KDoc documentation.*
 
-[https://kotlinlang.org/docs/kotlin-doc.html#module-and-package-documentation](https://kotlinlang.org/docs/kotlin-doc.html#module-and-package-documentation)
+[*https://kotlinlang.org/docs/kotlin-doc.html#module-and-package-documentation*](https://kotlinlang.org/docs/kotlin-doc.html#module-and-package-documentation)
 
-This is a quick guide for implementing Dokka in the android studio. You can check the further syntax in the above link.
+*This is a quick guide for implementing Dokka in the android studio. You can check the further syntax in the above link.*
 
-This whole blog is about basic information about documentation. Hope you enjoyed it and helpful in your development journey. That’s all for today.
+*This whole blog is about basic information about documentation. Hope you enjoyed it and helpful in your development journey. That’s all for today.*
 
-Have a nice day 👋👋👋👋
+*Have a nice day 👋👋👋👋*
